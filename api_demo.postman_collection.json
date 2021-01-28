@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "4a11308b-c08f-4f23-8dbc-366b7510618b",
+		"name": "api_demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "set_ip_allow",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"data\":[{\"key\":\"8d88a3376559272239b7640fec4edaaf\",\"ip\":\"1.1.1.1\"},{\"key\":\"9cffe29796372b932bce921886918e2a\",\"ip\":\"1.1.1.1\"},{\"key\":\"6a3e6bb5466bd13655643903798b9e81\",\"ip\":\"1.1.1.1\"},{\"key\":\"e1bd3b61bff8d04552d5c4668dcc1c83\",\"ip\":\"1.1.1.1\"},{\"key\":\"46227a051dbcdf84bd31d8b36abb5648\",\"ip\":\"1.1.1.1\"},{\"key\":\"866fc98ac49cd2507ada1d1bbf1d8672\",\"ip\":\"1.1.1.1\"},{\"key\":\"c0eadda235ba43df8e825608a797d311\",\"ip\":\"1.1.1.1\"},{\"key\":\"2ec5da496dfe8b4a2ee9fc3a7836cb29\",\"ip\":\"1.1.1.1\"},{\"key\":\"4268742b520e3ef6c006a128daa2506e\",\"ip\":\"1.1.1.1\"},{\"key\":\"81ca1f83d81dc08f11e5987d032180e1\",\"ip\":\"1.1.1.1\"}]}"
+				},
+				"url": {
+					"raw": "https://sv1.smproxy.net/apit/set_ip_allow",
+					"protocol": "https",
+					"host": [
+						"sv1",
+						"smproxy",
+						"net"
+					],
+					"path": [
+						"apit",
+						"set_ip_allow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "info_proxy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key\":[\"8d88a3376559272239b7640fec4edaaf\",\"9cffe29796372b932bce921886918e2a\",\"6a3e6bb5466bd13655643903798b9e81\",\"e1bd3b61bff8d04552d5c4668dcc1c83\",\"46227a051dbcdf84bd31d8b36abb5648\",\"866fc98ac49cd2507ada1d1bbf1d8672\",\"c0eadda235ba43df8e825608a797d311\",\"2ec5da496dfe8b4a2ee9fc3a7836cb29\",\"4268742b520e3ef6c006a128daa2506e\",\"81ca1f83d81dc08f11e5987d032180e1\"]}"
+				},
+				"url": {
+					"raw": "https://sv1.smproxy.net/apit/info_proxy",
+					"protocol": "https",
+					"host": [
+						"sv1",
+						"smproxy",
+						"net"
+					],
+					"path": [
+						"apit",
+						"info_proxy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Renew IP, chỉ gói private",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"key\":[\"8d88a3376559272239b7640fec4edaaf\",\"9cffe29796372b932bce921886918e2a\",\"6a3e6bb5466bd13655643903798b9e81\",\"e1bd3b61bff8d04552d5c4668dcc1c83\",\"46227a051dbcdf84bd31d8b36abb5648\",\"866fc98ac49cd2507ada1d1bbf1d8672\",\"c0eadda235ba43df8e825608a797d311\",\"2ec5da496dfe8b4a2ee9fc3a7836cb29\",\"4268742b520e3ef6c006a128daa2506e\",\"81ca1f83d81dc08f11e5987d032180e1\"]}"
+				},
+				"url": {
+					"raw": "https://sv1.smproxy.net/apit/renew_ip",
+					"protocol": "https",
+					"host": [
+						"sv1",
+						"smproxy",
+						"net"
+					],
+					"path": [
+						"apit",
+						"renew_ip"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
