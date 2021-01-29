@@ -4,14 +4,22 @@ $listip = explode("\r\n", file_get_contents('ip_set.txt'));
 define(URL_API, 'https://sv1.smproxy.net/apit/');
 $tinhnang = $_GET['tinhnang'];
 $ip = $_GET['ip'];
-if($tinhnang == 'set_ip_allow'){
-    echo set_ip_allow($ip);
-}elseif($tinhnang == 'set_listip_allow'){
-    echo set_listip_allow();
-}elseif ($tinhnang == 'info_proxy'){
-    echo info_proxy();
-}elseif ($tinhnang == 'renew_ip'){
-    echo renew_ip();
+switch ($tinhnang) {
+    case 'set_ip_allow':
+        echo set_ip_allow($ip);
+        break;
+    case 'set_listip_allow':
+        echo set_listip_allow();
+        break;
+    case 'info_proxy':
+        echo info_proxy();
+        break;
+    case 'renew_ip':
+        echo renew_ip();
+        break;
+    default:
+        echo "tính năng không đúng";
+        break;
 }
 function set_ip_allow($listip){
 global $listkey;
@@ -38,7 +46,7 @@ function info_proxy(){
     $p['key'] = $listkey;
   return post(URL_API.'info_proxy',json_encode($p));  
 }
-function renew_ip(){// ở đây sẽ xử lý thay đổi ip tất cả key ở trong file txt 
+function renew_ip(){
     global $listkey;
     $p['key'] = $listkey;
   return post(URL_API.'renew_ip',json_encode($p));  
