@@ -6,6 +6,8 @@ $tinhnang = $_GET['tinhnang'];
 $ip = $_GET['ip'];
 if($tinhnang == 'set_ip_allow'){
     echo set_ip_allow($ip);
+}elseif($tinhnang == 'set_listip_allow'){
+    echo set_listip_allow();
 }elseif ($tinhnang == 'info_proxy'){
     echo info_proxy();
 }elseif ($tinhnang == 'renew_ip'){
