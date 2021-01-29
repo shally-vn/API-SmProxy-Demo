@@ -1,15 +1,13 @@
 <?php
 $listkey = explode("\r\n", file_get_contents('key.txt'));
+$listip = explode("\r\n", file_get_contents('ip_set.txt'));
 define(URL_API, 'https://sv1.smproxy.net/apit/');
 $tinhnang = $_GET['tinhnang'];
 $ip = $_GET['ip'];
 if($tinhnang == 'set_ip_allow'){
     echo set_ip_allow($ip);
 }elseif ($tinhnang == 'info_proxy'){
-    $data = json_decode(info_proxy(),true);
-    for ($i=0; $i < count($data['data']); $i++) { 
-       echo $data['data'][$i]['data']['host_static'].":".$data['data'][$i]['data']['http_port']."<br>";
-    }
+    echo info_proxy();
 }elseif ($tinhnang == 'renew_ip'){
     echo renew_ip();
 }
@@ -19,6 +17,16 @@ $data = [];
 for ($i=0; $i < count($listkey); $i++) { 
     $data[$i]['key'] = $listkey[$i];
     $data[$i]['ip'] = $listip;
+}
+$p['data'] = $data;
+return post(URL_API.'set_ip_allow',json_encode($p));
+}
+function set_listip_allow(){
+global $listkey,$listip;
+$data = [];
+for ($i=0; $i < count($listkey); $i++) { 
+    $data[$i]['key'] = $listkey[$i];
+    $data[$i]['ip'] = $listip[$i];
 }
 $p['data'] = $data;
 return post(URL_API.'set_ip_allow',json_encode($p));
@@ -52,6 +60,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 curl_setopt($ch, CURLOPT_TIMEOUT, 60);
 curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 60);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Expect:'));
 $page = curl_exec($ch);
 curl_close($ch);
 return $page;
