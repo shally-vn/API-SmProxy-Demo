@@ -7,10 +7,25 @@
 - Mỗi Ip ngăn cách bằng dấu phẩy
 ### Api LocalHost :
 ```
-localhost/api.php?tinhnang=set_ip_allow&ip=1.2.3.4,11.12.13.14,
+http://localhost/api.php?tinhnang=set_ip_allow&ip=1.2.3.4,11.12.13.14,
 ```
 ### API SV :
-- Thay KEY và IP vào IP
+- Thay KEY và IP vào URL
 ```
 https://sv1.smproxy.net/apit/set_ip_allow?key=KEY&ip=IP
+```
+## API GET Info Proxy
+### Api LocalHost :
+```
+http://localhost/api.php?tinhnang=info_proxy
+```
+## API Renew IP :
+### Api LocalHost :
+```
+http://localhost/api.php?tinhnang=renew_ip
+```
+### API SV :
+- Thay KEY vào URL
+```
+https://sv1.smproxy.net/apit/set_ip_allow?key=KEY
 ```
