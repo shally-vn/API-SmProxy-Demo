@@ -27,5 +27,5 @@ http://localhost/api.php?tinhnang=renew_ip
 ### API SV :
 - Thay KEY vào URL
 ```
-https://sv1.smproxy.net/apit/set_ip_allow?key=KEY
+https://sv1.smproxy.net/apit/renew_ip?key=KEY
 ```
