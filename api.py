@@ -38,12 +38,13 @@ class Api():
         return s
 tinhnang = sys.argv[1]
 if tinhnang == 'set_ip':
-    d = print(Api().set_ip_allow(sys.argv[2]))
+    d = Api().set_ip_allow(sys.argv[2])
 elif tinhnang == 'set_listip':
-    d = print(Api().set_listip_allow())
+    d = Api().set_listip_allow()
 elif tinhnang == 'info_proxy':
-    d = print(Api().info_proxy())
+    d = Api().info_proxy()
 elif tinhnang == 'renew_ip':
-    d = print(Api().renew_ip())
+    d = Api().renew_ip()
 else:
-    print('not found')
+    d = 'not found'
+print(d)
