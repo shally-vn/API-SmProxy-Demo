@@ -15,10 +15,8 @@ class Api():
     def set_listip_allow(self):
         data,p = {},[]
         if len(self.list_key) == len(self.list_ip):
-            i = 0
-            for key in self.list_key:
+            for i,key in enumerate(self.list_key):
                 p.append({'key':key,'ip':self.list_ip[i]})
-                i+=1
             data['data'] = p
             s = self.post('set_ip_allow',data)
         else:
